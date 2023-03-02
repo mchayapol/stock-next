@@ -6,6 +6,7 @@ export default function AddBlogPage() {
     const [data, setData] = useState("");
 
     const saveBlog = async (data) => {
+        
         const response = await fetch('/api/blogs/articles', {
             method: "POST", // *GET, POST, PUT, DELETE, etc.
             mode: "cors", // no-cors, *cors, same-origin

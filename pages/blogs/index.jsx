@@ -26,7 +26,15 @@ export default function Home({ blogs }) {
       <p style={{ margin: '0.4rem' }}>
         <Link href="/blogs/add">+New Blog</Link>
       </p>
-      <table><tbody>
+      <table>
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Category</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
         {
           blogs.map(blog => {
             return (
@@ -36,7 +44,7 @@ export default function Home({ blogs }) {
                     {blog.title}
                   </Link>
                 </td>
-                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                <td>{blog.category}</td>
                 <td>
                   <Link href={`/blogs/update/${blog._id}`}>Update</Link>
                   &nbsp;&nbsp;&nbsp;
